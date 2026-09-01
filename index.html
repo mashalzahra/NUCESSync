@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <h2 class="logo">NUCESSync</h2>
+        <div class="header-buttons">
+            <button id="themeToggleBtn" class="theme-toggle-btn">🌙</button>
+            <button class="add-note-btn" onclick="openNoteDialog()">➕ Add Note</button>
+        </div>
+        <nav class="rightnavigation">
+            <a href="timetable.html">Home</a>
+            <a href="productivity.html">Productivity</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Create a new note</h2>
+            <p class="intro-text">Start capturing your thoughts, ideas, and class notes instantly.</p>
+        </section>
+        <section class="notes-section">
+            <h2>All Notes</h2>
+            <div id="notesContainer" class="notes-grid"></div>
+        </section>
+    </main>
+
+    <dialog id="noteDialog">
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <h2 class="dialog-title" id="dialogTitle">Add New Note</h2>
+                <button class="close-btn" onclick="closeNoteDialog()">❌</button>
+            </div>
+            <form id="noteForm">
+                <div id= "subjectGroup" class="form-group">
+                    <label for="noteSubject" class="form-label">Subject</label>
+                    <select id="noteSubject" class="form-input" required>
+                        <option value="Calculus">Calculus</option>
+                        <option value="AppliedPhysics">Applied Physics</option>
+                        <option value="Programming">Programming Fundamentals</option>
+                        <option value="English">Functional English</option>
+                        <option value="ICP">ICP</option>
+                        <option value="ISL">ISL</option>
+                        <option value="add-new">➕ Add new subject</option>
+                    </select>
+                </div>
+                <div id="topicGroup" class="form-group">
+                    <label for="noteTopic" class="form-label">Topic</label>
+                    <input type="text" id="noteTopic" class="form-input" placeholder="Enter topic" required>
+                </div>
+                <div class="form-group">
+                    <label for="noteTitle" class="form-label">Title</label>
+                    <input type="text" id="noteTitle" class="form-input" placeholder="Enter note Title" required>
+                </div>
+                <div class="form-group">
+                    <label for="noteContent" class="form-label">Content</label>
+                    <textarea id="noteContent" class="form-textarea" placeholder="Write your note here" required></textarea>
+                </div>
+
+                <div class="dialog-actions">
+                    <button type="button" class="cancel-btn" onclick="closeNoteDialog()">Cancel</button>
+                    <button type="submit" class="save-btn">Save Note</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+</body>
+</html>
